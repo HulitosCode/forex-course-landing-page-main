@@ -40,8 +40,8 @@ export function ResultsSection() {
     <section className="bg-muted/30 py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <Badge className="mb-4 bg-primary text-primary-foreground font-bold">💰 Resultados Reais</Badge>
-          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-balance">Resultados dos Nossos Alunos</h2>
+          <Badge className="mb-4 bg-yellow-500 text-primary-foreground font-bold">💰 Resultados Reais</Badge>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-4 text-balance">Nossos Resultados</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Veja os lucros reais de quem já está transformando sua vida com o Forex
           </p>
@@ -52,7 +52,7 @@ export function ResultsSection() {
             <Card key={index} className="p-0 border-2 hover:border-primary/50 transition-all overflow-hidden">
               <div className="relative rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-primary/5 aspect-[4/3]">
                 <Image
-                  src={result.image || "/placeholder.svg"}
+                  src={result.image}
                   alt={`Resultado de trading ${index + 1}`}
                   fill
                   className="object-cover"
@@ -67,7 +67,7 @@ export function ResultsSection() {
             <Button
               onClick={() => setShowAll(true)}
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8"
+              className="bg-yellow-500 hover:bg-primary/90 text-primary-foreground font-bold px-8"
             >
               Ver Mais Resultados
             </Button>

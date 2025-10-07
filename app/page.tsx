@@ -20,15 +20,9 @@ export default function ForexLandingPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          amount: 8000,
+          amount: 1,
           reference: `FOREX-${Date.now()}`,
           description: "Curso Completo de Forex - Estratégias Lucrativas",
-          customerData: {
-            name: "Cliente",
-            email: "cliente@email.com",
-            whatsapp: "",
-            gender: "other",
-          },
         }),
       })
 
@@ -50,8 +44,8 @@ export default function ForexLandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Announcement Bar */}
-      <div className="bg-foreground text-background py-3 px-4 text-center">
-        <p className="text-sm font-medium">
+      <div className="bg-yellow-500 text-background py-3 px-4 text-center">
+        <p className="text-sm font-medium ">
           <span className="text-primary">⚡</span> <span className="font-bold">OFERTA LIMITADA:</span> Apenas 15 vagas
           restantes com 65% de desconto!
         </p>
@@ -66,7 +60,6 @@ export default function ForexLandingPage() {
       {/* Footer */}
       <footer className="bg-muted/30 py-8 border-t">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>© 2025 Forex Academy. Todos os direitos reservados.</p>
           <p className="mt-2">Trading envolve riscos. Opere com responsabilidade.</p>
         </div>
       </footer>

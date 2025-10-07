@@ -15,12 +15,12 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
     <section className="container mx-auto px-4 py-16 lg:py-24">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
-          <Badge className="bg-primary text-primary-foreground border-0 px-4 py-1.5 font-bold">
+          <Badge className="bg-yellow-500 text-primary-foreground border-0 px-4 py-1.5 font-bold">
             ⚡ Método Comprovado
           </Badge>
 
           <h1 className="text-4xl lg:text-6xl font-bold leading-tight text-balance">
-            Domine o Mercado <span className="text-primary">Forex</span> e Conquiste sua Liberdade Financeira
+            Domine o Mercado <span className="text-yellow-500">Forex</span> e Conquiste sua Liberdade Financeira
           </h1>
 
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -45,8 +45,8 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
 
           <div className="pt-4">
             <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-3xl font-bold line-through text-muted-foreground">23.000 MT</span>
-              <span className="text-5xl font-bold text-primary">8.000 MT</span>
+              <span className="text-3xl font-bold line-through text-muted-foreground">4.200 MT</span>
+              <span className="text-5xl font-bold text-yellow-500">2.730 MT</span>
               <Badge variant="destructive" className="text-sm font-bold">
                 -65%
               </Badge>
@@ -54,7 +54,7 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
 
             <Button
               size="lg"
-              className="w-full sm:w-auto text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-bold"
+              className="w-full sm:w-auto text-lg px-8 py-6 bg-yellow-500 hover:bg-primary/90 text-primary-foreground font-bold"
               onClick={onPayment}
               disabled={isLoading}
             >
@@ -71,11 +71,11 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
         <div className="relative">
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/30">
             <Image
-              src="/f19.png"
+              src="/f5.png"
               alt="Resultados de Trading Forex"
               width={800}
               height={600}
-              className="w-full h-auto"
+              className="object-cover"
             />
             <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-bold shadow-lg">
               +320.000 MT Este Mês
