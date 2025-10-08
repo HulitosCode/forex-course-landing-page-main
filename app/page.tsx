@@ -8,38 +8,7 @@ import { BenefitsSection } from "@/components/benefits-section"
 import { CTASection } from "@/components/cta-section"
 
 export default function ForexLandingPage() {
-  const [isLoading, setIsLoading] = useState(false)
-
-  const handlePayment = async () => {
-    setIsLoading(true)
-
-    try {
-      const response = await fetch("/api/payment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: 1,
-          reference: `FOREX-${Date.now()}`,
-          description: "Curso Completo de Forex - Estratégias Lucrativas",
-        }),
-      })
-
-      const data = await response.json()
-
-      if (data.payment_url) {
-        window.location.href = data.payment_url
-      } else {
-        alert("Erro ao processar pagamento. Tente novamente.")
-      }
-    } catch (error) {
-      console.error("Erro ao processar pagamento:", error)
-      alert("Erro ao processar pagamento. Tente novamente.")
-    } finally {
-      setIsLoading(false)
-    }
-  }
+  
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,11 +20,11 @@ export default function ForexLandingPage() {
         </p>
       </div>
 
-      <HeroSection onPayment={handlePayment} isLoading={isLoading} />
+      <HeroSection  />
       <LearningPathSection />
       <ResultsSection />
       <BenefitsSection />
-      <CTASection onPayment={handlePayment} isLoading={isLoading} />
+      <CTASection  />
 
       {/* Footer */}
       <footer className="bg-muted/30 py-8 border-t">

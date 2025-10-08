@@ -4,11 +4,8 @@ export async function POST(req: Request) {
   try {
     const body = await req.json()
 
-    console.log("[v0] Creating payment with data:", body)
-
     const apiKey = process.env.PAYSUITE_API_KEY
     if (!apiKey) {
-      console.error("[v0] PAYSUITE_API_KEY is not configured")
       return NextResponse.json(
         {
           error: "Configuração de pagamento inválida. Por favor, configure PAYSUITE_API_KEY nas variáveis de ambiente.",
@@ -17,7 +14,6 @@ export async function POST(req: Request) {
       )
     }
 
-    console.log("[v0] API Key exists:", apiKey ? `${apiKey.substring(0, 10)}...` : "NOT SET")
 
     const baseUrl = process.env.BASE_URL || process.env.NEXT_PUBLIC_BASE_URL
     if (!baseUrl) {
@@ -28,7 +24,6 @@ export async function POST(req: Request) {
       )
     }
 
-    console.log("[v0] Making request to Paysuite API...")
 
     const response = await fetch("https://paysuite.tech/api/v1/payments", {
       method: "POST",
@@ -48,8 +43,6 @@ export async function POST(req: Request) {
 
     const data = await response.json()
 
-    console.log("[v0] Paysuite response status:", response.status)
-    console.log("[v0] Paysuite response data:", data)
 
     if (!response.ok) {
       return NextResponse.json({ error: data.message || "Erro na API de pagamento" }, { status: response.status })
@@ -57,7 +50,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(data)
   } catch (error) {
-    console.error("[v0] Erro no endpoint de pagamento:", error)
     return NextResponse.json({ error: "Erro interno no servidor" }, { status: 500 })
   }
 }

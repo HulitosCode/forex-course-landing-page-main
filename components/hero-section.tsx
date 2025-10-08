@@ -5,12 +5,29 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, CheckCircle2, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
-interface HeroSectionProps {
-  onPayment: () => void
-  isLoading: boolean
-}
 
-export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
+export function HeroSection() {
+
+  const handlePayment = async () => {
+    const paymentRes = await fetch('/api/payment', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        amount: 1,
+        reference: `FOREX${Date.now()}`,
+        description: "Curso Completo de Forex - Estratégias Lucrativas"
+      })
+    })
+
+    const paymentData = await paymentRes.json()
+
+    if (paymentData?.data?.checkout_url) {
+      window.location.href = paymentData.data.checkout_url
+    }
+  }
+
+  
+
   return (
     <section className="container mx-auto px-4 py-16 lg:py-24">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -45,8 +62,8 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
 
           <div className="pt-4">
             <div className="flex items-baseline gap-3 mb-4">
-              <span className="text-3xl font-bold line-through text-muted-foreground">4.200 MT</span>
-              <span className="text-5xl font-bold text-yellow-500">2.730 MT</span>
+              <span className="text-3xl font-bold line-through text-muted-foreground">1000 MT</span>
+              <span className="text-5xl font-bold text-yellow-500">650 MT</span>
               <Badge variant="destructive" className="text-sm font-bold">
                 -65%
               </Badge>
@@ -55,10 +72,9 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
             <Button
               size="lg"
               className="w-full sm:w-auto text-lg px-8 py-6 bg-yellow-500 hover:bg-primary/90 text-primary-foreground font-bold"
-              onClick={onPayment}
-              disabled={isLoading}
+              onClick={handlePayment}
             >
-              {isLoading ? "Processando..." : "🚀 Acessar Módulo Lucrativo Agora"}
+              🚀 Acessar Módulo Lucrativo Agora"
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
 
@@ -78,7 +94,7 @@ export function HeroSection({ onPayment, isLoading }: HeroSectionProps) {
               className="object-cover"
             />
             <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-bold shadow-lg">
-              +320.000 MT Este Mês
+              +60.000 MT Este Mês
             </div>
           </div>
 
