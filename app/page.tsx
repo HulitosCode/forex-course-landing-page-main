@@ -20,7 +20,7 @@ export default function ForexLandingPage() {
 
       {/* 🎥 Vídeo hospedado localmente */}
       <section className="flex justify-center py-8 px-4 bg-muted/20">
-        <div className="relative w-full max-w-6xl aspect-video rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-full max-w-7xl aspect-video rounded-xl overflow-hidden shadow-lg">
           <video
             src="/video.mp4"
             autoPlay
