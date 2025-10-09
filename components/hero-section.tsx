@@ -63,7 +63,7 @@ export function HeroSection() {
           <div className="pt-4">
             <div className="flex items-baseline gap-3 mb-4">
               <span className="text-3xl font-bold line-through text-muted-foreground">1000 MT</span>
-              <span className="text-5xl font-bold text-yellow-500">650 MT</span>
+              <span className="text-5xl font-bold text-yellow-500">350 MT</span>
               <Badge variant="destructive" className="text-sm font-bold">
                 -65%
               </Badge>

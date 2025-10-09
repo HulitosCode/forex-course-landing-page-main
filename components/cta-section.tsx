@@ -44,7 +44,7 @@ export function CTASection() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-left">
               <p className="text-sm text-muted-foreground mb-2">De 1000 MT por apenas</p>
-              <p className="text-5xl font-bold text-yellow-500 mb-2">650 MT</p>
+              <p className="text-5xl font-bold text-yellow-500 mb-2">350 MT</p>
               <p className="text-sm text-muted-foreground">Oferta válida por tempo limitado</p>
             </div>
 
