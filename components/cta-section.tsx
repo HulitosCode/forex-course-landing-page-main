@@ -13,7 +13,7 @@ export function CTASection() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          amount: 650,
+          amount: 350,
           reference: `FOREX${Date.now()}`,
           description: "Curso Completo de Forex - Estratégias Lucrativas"
         })
