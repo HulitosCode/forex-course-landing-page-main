@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
-        <GoogleAnalytics gaId="G-3KJWSCYSFX" />
+        <GoogleAnalytics gaId="G-KG5X0KW8ZT" />
       </body>
     </html>
   )
